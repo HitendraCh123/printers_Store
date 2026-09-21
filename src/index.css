@@ -1,0 +1,217 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DESIGN TOKENS — Printer Trooper visual identity
+   Professional navy + slate palette with a warm CTA accent
+   and a dedicated green reserved strictly for savings/discounts.
+   Fraunces + Inter type pairing retained.
+   ══════════════════════════════════════════════════════════ */
+:root {
+	/* Neutrals */
+	--ink: #16263B;          /* deep navy-charcoal — headings, dark surfaces (used sparingly) */
+	--ink-soft: #5B6B7A;     /* muted slate — body/secondary text */
+	--paper: #FFFFFF;        /* page background */
+	--panel: #F4F6F9;        /* soft cool-gray section background */
+	--panel-deep: #E9EDF2;
+	--line: #E1E6EC;
+	--white: #FFFFFF;
+
+	/* Brand — professional blue, replaces black as the dominant identity color */
+	--rust:#166fe4;        /* primary brand blue (kept var name for drop-in compatibility) */
+	--rust-deep: #134A89;
+	--rust-tint: #E9F1FB;
+
+	/* CTA accent — warm orange for primary action buttons */
+	--accent: #EE8C2B;
+	--accent-deep: #D6740F;
+	--accent-tint: #FDEFDD;
+
+	/* Savings / discount green — reserved exclusively for "You save" & price-off copy */
+	--forest: #1C8A4B;
+	--forest-deep: #136B3A;
+	--forest-tint: #E6F7ED;
+
+	--danger: #C13A3A;
+	--danger-tint: #FBE9E9;
+
+	/* Type */
+	--font-display: "Fraunces", "Georgia", serif;
+	--font-body: "Inter", -apple-system, sans-serif;
+
+	/* Shape */
+	--radius-sm: 4px;
+	--radius-md: 6px;
+	--radius-lg: 10px;
+}
+
+body {
+	line-height: 1.5;
+	font-family: var(--font-body);
+	background: var(--paper);
+	color: var(--ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-display);
+	color: var(--ink);
+	letter-spacing: -0.01em;
+}
+
+
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ── Shared icon spacing utilities ── */
+.icon-spacing {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.icon-spacing-sm {
+	margin-right: 4px;
+}
+.icon-spacing-md {
+	margin-right: 6px;
+}
+.icon-spacing-lg {
+	margin-right: 8px;
+}
+
+/* ── Signature motif: perforated rule, like a torn receipt edge ──
+   Used between major sections instead of a plain hairline. */
+.perf-divider {
+	height: 1px;
+	background-image: repeating-linear-gradient(
+		to right,
+		var(--line) 0,
+		var(--line) 6px,
+		transparent 6px,
+		transparent 14px
+	);
+	border: none;
+	margin: 0;
+}
+
