@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /login
+Disallow: /signup
+Disallow: /my-orders
+Disallow: /search
+
+Sitemap: https://www.printertrooperinc.com/sitemap.xml

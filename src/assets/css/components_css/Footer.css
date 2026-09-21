@@ -1,0 +1,146 @@
+.footer-section {
+    background: var(--ink);
+    padding: 50px 0px 30px;
+    color: var(--white);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-bottom: 30px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.footer-logo {
+    width: 55px;
+}
+
+.disclosure-box {
+    border: 1px solid var(--rust);
+    border-radius: var(--radius-md);
+    padding: 24px 28px;
+    background: #1C3A57;
+}
+
+.disclosure-box h4 {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.disclosure-box p {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 15px;
+}
+.disclosure-box span{
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 12px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 22px;
+}
+
+.footer-links ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links ul li a:hover {
+    color: var(--rust);
+}
+
+.footer-contact .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.footer-contact .contact-item svg {
+    color: var(--rust);
+    margin-top: 5px;
+}
+.footer-contact .address{
+    display: block;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+}
+.footer-contact .address span {
+    /* font-size: 12px; */
+    margin-left: 10px;
+    line-height: 1.8;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+   padding-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #9AA5B1;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.footer-bottom p a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-bottom p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+
+    .footer-section {
+        padding: 40px 20px;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .disclosure-box {
+        margin-bottom: 40px;
+    }
+
+    .footer-links,
+    .footer-contact {
+        margin-top: 40px;
+    }
+}

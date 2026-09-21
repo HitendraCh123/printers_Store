@@ -1,0 +1,199 @@
+/* ══════════════════════════════════════════════════════════
+   HERO — split layout: copy column + tilted printed-card stack
+   ══════════════════════════════════════════════════════════ */
+.hero-wrapper {
+    padding: 48px 0 56px;
+    background: var(--paper);
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+    min-height: 380px;
+}
+
+/* ── Left: copy column ── */
+.hero-copy {
+    max-width: 480px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 26px;
+}
+
+.hero-btn {
+    padding: 14px 34px;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+}
+
+/* Punch-tab navigation, like ticket stubs */
+.hero-tabs {
+    display: flex;
+    gap: 8px;
+    margin-top: 34px;
+}
+
+.hero-tab {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid var(--line);
+    background: var(--white);
+    color: var(--ink-soft);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero-tab.active {
+    background: var(--white);
+    transform: scale(1.12);
+}
+
+.hero-tab:not(.active):hover {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+/* ── Right: tilted printed-card stack ── */
+.hero-stack {
+    position: relative;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-stack-card {
+    position: absolute;
+    width: 78%;
+    height: 84%;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 18px 40px rgba(27,27,31,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 28px;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+    border-top: 6px solid var(--card-accent);
+}
+
+.hero-stack-card img {
+    max-width: 100%;
+    max-height: 100%;
+    /* object-fit: contain; */
+      border-radius: var(--radius-lg);
+}
+
+.hero-stack-card.depth-0 {
+    transform: rotate(0deg) translateY(0);
+    z-index: 3;
+    cursor: default;
+}
+
+.hero-stack-card.depth-1 {
+    transform: rotate(7deg) translate(18px, 10px);
+    z-index: 2;
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.hero-stack-card.depth-2 {
+    transform: rotate(-9deg) translate(-22px, 16px);
+    z-index: 1;
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.hero-stack-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(27,27,31,0.12);
+    transition: all 0.18s;
+}
+
+.hero-stack-arrow:hover {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.hero-stack-arrow.left  { left: -6px; }
+.hero-stack-arrow.right { right: -6px; }
+
+/* ── Tablet ─────────────────────────────── */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-copy { max-width: 100%; }
+    .hero-title { font-size: 32px; }
+    .hero-desc  { font-size: 14px; }
+
+    .hero-stack { height: 280px; order: -1; margin-bottom: 12px; }
+}
+
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 767px) {
+    .hero-wrapper { padding: 28px 0 36px; }
+
+    .hero-title { font-size: 24px; }
+    .hero-btn   { padding: 11px 26px; font-size: 13px; }
+
+    .hero-stack { height: 220px; }
+    .hero-stack-card { padding: 16px; }
+
+    .hero-tabs { margin-top: 22px; }
+    .hero-tab  { width: 32px; height: 32px; font-size: 10px; }
+
+    .hero-stack-arrow { width: 34px; height: 34px; font-size: 20px; }
+}
